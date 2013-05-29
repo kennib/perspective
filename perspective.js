@@ -21,3 +21,11 @@ persp.controller('ideaCtrl', function($scope, $routeParams, $controller, $parse)
   $scope.slide = $routeParams.slide;
   $controller($scope.idea+'Ctrl', {$scope: $scope});
 });
+
+persp.controller('populationCtrl', function($scope) {
+  $scope.population = 7142893234; // people
+  $scope.distanceToTheMoon = 367373000; // metres
+  $scope.averagePerson = {
+    depth: 0.5, // metres
+  };
+});
