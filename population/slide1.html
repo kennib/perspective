@@ -1,2 +1,2 @@
-<p>If everyone in the world were to queue the line would extend {{population*averagePerson.depth}} m</p>
-<p>That's {{distanceToTheMoon/(population*averagePerson.depth)}} trips to the Moon!</p>
+<p>If everyone in the world were to queue the line would extend {{population.mul(averagePerson.depth) | unit:'km'}}</p>
+<p>That's {{distanceToTheMoon.div(population.mul(averagePerson.depth)) | unit}} trips to the Moon!</p>

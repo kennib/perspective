@@ -13,6 +13,12 @@ persp.config(function($routeProvider) {
     .otherwise({redirectTo: '/'});
 });
 
+persp.filter('unit', function() {
+  return function(quantity, unit) {
+    return quantity.toString(unit);
+  };
+});
+
 persp.controller('homeCtrl', function($scope) {
 });
 
@@ -23,9 +29,9 @@ persp.controller('ideaCtrl', function($scope, $routeParams, $controller, $parse)
 });
 
 persp.controller('populationCtrl', function($scope) {
-  $scope.population = 7142893234; // people
-  $scope.distanceToTheMoon = 367373000; // metres
+  $scope.population = new Qty('7142893234 people');
+  $scope.distanceToTheMoon = new Qty('367373 km');
   $scope.averagePerson = {
-    depth: 0.5, // metres
+    depth: new Qty('0.5 metres'),
   };
 });
