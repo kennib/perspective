@@ -1,4 +1,4 @@
-var persp = angular.module('perspective', []);
+var persp = angular.module('perspective', ['data']);
 
 persp.config(function($routeProvider) {
   $routeProvider
@@ -11,12 +11,6 @@ persp.config(function($routeProvider) {
     })
     .when('/:idea', {redirectTo: '/:idea/0'})
     .otherwise({redirectTo: '/'});
-});
-
-persp.filter('unit', function() {
-  return function(quantity, unit) {
-    return quantity.toString(unit);
-  };
 });
 
 persp.controller('homeCtrl', function($scope) {
