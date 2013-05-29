@@ -22,8 +22,9 @@ persp.controller('ideaCtrl', function($scope, $routeParams, $controller, $parse)
   $controller($scope.idea+'Ctrl', {$scope: $scope});
 });
 
-persp.controller('populationCtrl', function($scope) {
-  $scope.population = new Qty('7142893234 people');
+persp.controller('populationCtrl', function($scope, population) {
+  window.scope = $scope;
+  $scope.population = population;
   $scope.distanceToTheMoon = new Qty('367373 km');
   $scope.averagePerson = {
     depth: new Qty('0.5 metres'),
