@@ -71,9 +71,9 @@ data.factory('autoupdate', function($timeout) {
 });
 
 data.filter('unit', function() {
-  return function(quantity, unit) {
+  return function(quantity, unit, decimalPlaces) {
     if (quantity !== undefined)
-      return quantity.toString(unit);
+      return quantity.toString(unit, decimalPlaces);
   };
 });
 
