@@ -25,3 +25,8 @@
   font-family: 'Noto Sans' sans-serif;
   font-size: 1em;
 }
+
+.slide quantity-diagram {
+  display: block;
+  width: 100%;
+}

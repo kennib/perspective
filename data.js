@@ -102,5 +102,50 @@ data.filter('range', function() {
 
     return range;
   }
-})
+});
+
+data.directive('quantityDiagram', function() {
+  return {
+    restrict: 'E',
+    link: function(scope, element, attrs) {
+      // Create a canvas
+      var canvas = document.createElement("canvas");
+      var context = canvas.getContext('2d');
+
+      scope.$watch(attrs["image"], function(imageName) {
+        // The number of images that need to be fit on the canvas
+        var numImages = scope.$eval(attrs["number"]);
+
+        // Add the images
+        var image = new Image();
+        image.onload = function() {
+          // Calculate the scale of the image
+          var vertical = canvas.offsetHeight/image.height;
+          var horizontal = canvas.offsetWidth/image.width;
+          var size = Math.sqrt(vertical*horizontal/numImages);
+          // Recalculate scale to fit images in without cutting them off
+          var rows = Math.ceil(canvas.offsetHeight/(image.height*size));
+          size = canvas.offsetHeight/rows/image.height;
+          image.height *= size; image.width *= size;
+
+          // Place images
+          var i = 0;
+          for (var y=0; y<canvas.offsetHeight; y+=image.height) {
+            for (var x=0; x<canvas.offsetWidth; x+=image.width) {
+              if (i++ < numImages)
+              context.drawImage(image, x, y, image.width, image.height);
+            }
+          }
+        };
+        
+        // Get the image
+        image.src = "images/"+imageName+".jpg";
+      });
+
+      // Add the canvas to the element
+      element.append(canvas);
+      canvas.width = element[0].offsetWidth;
+    }
+  }
+});
 
