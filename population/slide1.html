@@ -1,2 +1,2 @@
 <p>If everyone in the world were to queue the line would extend {{population.current().mul(averagePerson.depth) | unit:'km'}}</p>
-<p>That's {{distanceToTheMoon.div(population.current().mul(averagePerson.depth)) | unit}} trips to the Moon!</p>
+<p>That's {{population.current().mul(averagePerson.depth).div(distance_value) | unit}} times the <select ng-model="distance_value" ng-options="name for (name, value) in distances"> </p>

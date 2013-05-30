@@ -21,10 +21,11 @@ persp.controller('ideaCtrl', function($scope, $routeParams, $controller) {
   $controller($scope.idea+'Ctrl', {$scope: $scope});
 });
 
-persp.controller('populationCtrl', function($scope, $timeout, population, autoupdate) {
+persp.controller('populationCtrl', function($scope, $timeout, population, distances, autoupdate) {
   window.scope = $scope;
   $scope.population = population;
-  $scope.distanceToTheMoon = new Qty('367373 km');
+  $scope.distances = distances;
+  $scope.distance_value = distances["distance to the Moon"];
   $scope.averagePerson = {
     depth: new Qty('0.5 metres'),
   };

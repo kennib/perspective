@@ -56,6 +56,15 @@ data.factory('population', function($http) {
   return population;
 });
 
+data.value("distances", {
+  "distance to the Moon": new Qty('367373 km'),
+  "circumference of the Earth": new Qty('40075.04 km'),
+  "distance from Sydney to Melbourne": new Qty('713.8 km'),
+  "length of the Sydney Harbour Bridge": new Qty('1149 m'),
+  "length of the Nile River": new Qty('6650 km'),
+  "length of the Great Wall of China": new Qty('21196 km'),
+});
+
 data.factory('autoupdate', function($timeout) {
   var update = function() { $timeout(update, 100, true); };
   return update;
