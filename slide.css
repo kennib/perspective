@@ -1,0 +1,9 @@
+.slide h1,
+.slide h2,
+.slide h3 {
+  font-family: 'Roboto Slab' serif;
+}
+
+.slide p {
+  font-family: 'Varela Round' sans-serif;
+}
