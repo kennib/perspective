@@ -1,3 +1,7 @@
+.slide {
+  font-family: 'Noto Sans' sans-serif;
+}
+
 .slide h1,
 .slide h2,
 .slide h3 {
@@ -6,7 +10,6 @@
 }
 
 .slide p {
-  font-family: 'Noto Sans' sans-serif;
   font-size: 1.2em;
 }
 
@@ -14,4 +17,11 @@
   font-size: 1.3em;
   font-weight: bold;
   font-style: normal;
+}
+
+.slide select {
+  webkit-appearance: none;
+
+  font-family: 'Noto Sans' sans-serif;
+  font-size: 1em;
 }
