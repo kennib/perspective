@@ -83,9 +83,9 @@ data.factory('autoupdate', function($timeout) {
 });
 
 data.filter('unit', function() {
-  return function(quantity, unit, decimalPlaces) {
+  return function(quantity, unit, sigFigs) {
     if (quantity !== undefined)
-      return quantity.toString(unit, decimalPlaces);
+      return quantity.toString(unit, sigFigs);
   };
 });
 
