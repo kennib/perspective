@@ -56,6 +56,11 @@ data.factory('population', function($http) {
   return population;
 });
 
+data.factory('autoupdate', function($timeout) {
+  var update = function() { $timeout(update, 100, true); };
+  return update;
+});
+
 data.filter('unit', function() {
   return function(quantity, unit) {
     if (quantity !== undefined)
