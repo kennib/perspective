@@ -65,6 +65,18 @@ data.value("distances", {
   "length of the Great Wall of China": new Qty('21196 km'),
 });
 
+data.value("areas", {
+  "area of the Moon visible from Earth": new Qty('37900000 km2'),
+  "area of the United States of America": new Qty('9631000 km2'),
+  "area of Australia": new Qty('7687000 km2'),
+  "area of the UK": new Qty('243610 km2'),
+  "area of New York City": new Qty('783.8 km2'),
+  "area of Vatican City": new Qty('0.44 km2'),
+  "size of a Football (NFL) field": new Qty('5351 m2'),
+  "maximum size of a Football (FIFA) field": new Qty('10800 m2'),
+  "size of a Basketball court": new Qty('436.6 m2'),
+});
+
 data.factory('autoupdate', function($timeout) {
   var update = function() { $timeout(update, 100, true); };
   return update;

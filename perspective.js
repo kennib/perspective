@@ -21,14 +21,25 @@ persp.controller('ideaCtrl', function($scope, $routeParams, $controller) {
   $controller($scope.idea+'Ctrl', {$scope: $scope});
 });
 
-persp.controller('populationCtrl', function($scope, $timeout, population, distances, autoupdate) {
+persp.controller('populationCtrl', function($scope, $timeout, population, distances, areas, autoupdate) {
   window.scope = $scope;
   $scope.population = population;
+
   $scope.distances = distances;
-  $scope.distance_value = distances["distance to the Moon"];
+  $scope.distance = distances["distance to the Moon"];
   $scope.averagePerson = {
     depth: new Qty('0.5 metres'),
   };
+
+  $scope.areas = areas;
+  $scope.area = areas["area of New York City"];
+  $scope.person_areas = {
+    "the area of a newspaper": new Qty('0.126 m2'),
+    "a square meter": new Qty('1 m2'),
+    "the area of king size bed": new Qty('3.715 m2'), 
+    "the average size of an Australian house": new Qty('227.6 m2'),
+  };
+  $scope.person_area = $scope.person_areas["a square meter"];
 
   autoupdate();
 });

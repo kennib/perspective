@@ -1,0 +1,12 @@
+<p>
+  If everyone in the world were to fit into
+  <select ng-model="person_area" ng-options="value as name for (name, value) in person_areas"></select>
+  the global population would fill
+  {{population.current().mul(person_area) | unit:'square kilometers':0}}
+</p>
+<p>
+  That's
+  <select ng-model="area" ng-options="value as population.current().mul(person_area).div(value)|unit:'':0 for (name, value) in areas"></select>
+  times the
+  <select ng-model="area" ng-options="value as name for (name, value) in areas"></select>
+</p>
