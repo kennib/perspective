@@ -2,8 +2,16 @@
 .slide h2,
 .slide h3 {
   font-family: 'Roboto Slab' serif;
+  font-size: 2em;
 }
 
 .slide p {
-  font-family: 'Varela Round' sans-serif;
+  font-family: 'Noto Sans' sans-serif;
+  font-size: 1.2em;
+}
+
+.slide em {
+  font-size: 1.3em;
+  font-weight: bold;
+  font-style: normal;
 }
