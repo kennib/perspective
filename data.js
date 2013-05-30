@@ -89,3 +89,18 @@ data.filter('unit', function() {
   };
 });
 
+data.filter('range', function() {
+  return function(start, end) {
+    if (end === undefined) {
+      end = start;
+      start = 0;
+    }
+
+    var range = [];
+    for (var i=start; i<end; i++)
+      range.push(i);
+
+    return range;
+  }
+})
+

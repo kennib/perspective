@@ -26,13 +26,13 @@ persp.controller('populationCtrl', function($scope, $timeout, population, distan
   $scope.population = population;
 
   $scope.distances = distances;
-  $scope.distance = distances["distance to the Moon"];
+  $scope.distance = "distance to the Moon";
   $scope.averagePerson = {
     depth: new Qty('0.5 metres'),
   };
 
   $scope.areas = areas;
-  $scope.area = areas["area of New York City"];
+  $scope.area = "area of New York City";
   $scope.person_areas = {
     "the area of a newspaper": new Qty('0.126 m2'),
     "a square meter": new Qty('1 m2'),
