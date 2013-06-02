@@ -11,6 +11,4 @@
   <select ng-model="area" ng-options="name as name for (name, value) in areas"></select>
 </p>
 
-<section class="quantity visualisation">
-  <img ng-src="images/{{distance}}.png" ng-repeat="thing in population.current().mul(averagePerson.depth).div(distances[distance]).scalar | range">
-</section>
+<quantity-diagram image="distance" number="population.current().mul(averagePerson.depth).div(distances[distance]).scalar"></quantity-diagram>
